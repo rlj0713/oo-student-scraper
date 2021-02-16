@@ -1,0 +1,30 @@
+
+[1mFrom:[0m /home/rlj0713/Development/code/phase1/oo-student-scraper/lib/scraper.rb @ line 19 Scraper.scrape_index_page:
+
+     [1;34m6[0m: [32mdef[0m [1;36mself[0m.[1;34mscrape_index_page[0m(index_url)
+     [1;34m7[0m:   index_url = open([31m[1;31m"[0m[31mhttps://learn-co-curriculum.github.io/student-scraper-test-page/index.html[1;31m"[0m[31m[0m)
+     [1;34m8[0m:   scraped_student = [1;34;4mNokogiri[0m::HTML(index_url)
+     [1;34m9[0m:   scraped_student = scraped_student.css([31m[1;31m"[0m[31m.student-name[1;31m"[0m[31m[0m).children
+    [1;34m10[0m: 
+    [1;34m11[0m:   index_url = open([31m[1;31m"[0m[31mhttps://learn-co-curriculum.github.io/student-scraper-test-page/index.html[1;31m"[0m[31m[0m)
+    [1;34m12[0m:   scraped_location = [1;34;4mNokogiri[0m::HTML(index_url)
+    [1;34m13[0m:   scraped_location = scraped_location.css([31m[1;31m"[0m[31m.student-location[1;31m"[0m[31m[0m).children
+    [1;34m14[0m: 
+    [1;34m15[0m:   index_url = open([31m[1;31m"[0m[31mhttps://learn-co-curriculum.github.io/student-scraper-test-page/index.html[1;31m"[0m[31m[0m)
+    [1;34m16[0m:   scraped_url = [1;34;4mNokogiri[0m::HTML(index_url)
+    [1;34m17[0m:   [1;34m# scraped_url = scraped_url.css(".a").value[0m
+    [1;34m18[0m: 
+ => [1;34m19[0m:   binding.pry
+    [1;34m20[0m: 
+    [1;34m21[0m:   array = []
+    [1;34m22[0m:   scraped_student.each [32mdo[0m |student|
+    [1;34m23[0m:     array << student.text.strip
+    [1;34m24[0m:   [32mend[0m
+    [1;34m25[0m:   array  [1;34m#this is an array of all names[0m
+    [1;34m26[0m:   array = array.each_slice([1;34m1[0m).to_h     [1;34m#this is an array of {names}[0m
+    [1;34m27[0m: 
+    [1;34m28[0m:   array = array.each_with_object({}) { |k, h| h[k] = k }     [1;34m#this is a hash of all names => NAMES[0m
+    [1;34m29[0m: 
+    [1;34m30[0m:     
+    [1;34m31[0m: [32mend[0m
+
